@@ -1,6 +1,6 @@
 let options;
 const argsSchema = [
-    ['github', 'alainbryden'],
+    ['github', 'ironjade'],
     ['repository', 'bitburner-scripts'],
     ['branch', 'main'],
     ['download', []], // By default, all supported files in the repository will be downloaded. Override with just a subset of files here
@@ -40,8 +40,7 @@ export async function main(ns) {
         else
             ns.tprint(`WARNING: "${fullLocalFilePath}" was not updated. (Currently running, or not located at ${remoteFilePath}?)`)
     }
-    ns.tprint(`INFO: Pull complete. If you have any questions or issues, head over to the Bitburner #alains-scripts Discord channel: ` +
-        `https://discord.com/channels/415207508303544321/935667531111342200`);
+    ns.tprint(`INFO: Pull complete.`);
     // Remove any temp files / scripts from the prior version
     ns.run(pathJoin(options.subfolder, `cleanup.js`));
 }
