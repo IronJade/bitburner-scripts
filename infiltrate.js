@@ -1,3 +1,8 @@
+import {
+    instanceCount, getConfiguration, getNsDataThroughFile, getFilePath, getActiveSourceFiles, tryGetBitNodeMultipliers,
+    formatDuration, formatMoney, formatNumberShort, disableLogs, log
+} from './helpers.js'
+
 const state = {
   // Name of the company that's infiltrated.
   company: "",
@@ -14,6 +19,9 @@ const state = {
   game: {},
 };
 
+let player = await getPlayerInfo(ns);
+const playerCity = player.city;
+                                      
 // automatically accept reward and re-run for the same company
 let auto = false
 
@@ -31,6 +39,9 @@ let infiltrationStart = 0
 // any "ns" functions, it's a pure browser automation tool.
 const wnd = eval("window");
 const doc = wnd["document"];
+
+if (player.city != "Aevum") await goToCity(ns, "Aevum");
+if (company != "ECorp") let company = "ECorp";
 
 // List of all games and an automated solver.
 const infiltrationGames = [
