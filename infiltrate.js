@@ -41,7 +41,7 @@ const wnd = eval("window");
 const doc = wnd["document"];
 
 if (playerCity != "Aevum") await goToCity(ns, "Aevum");
-if (company != "ECorp") let company = "ECorp";
+if (company = "" || != "ECorp") let company = "ECorp";
 
 // List of all games and an automated solver.
 const infiltrationGames = [
